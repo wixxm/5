@@ -76,10 +76,7 @@ jobs:
         mv -n $@ $rootdir/ || true
         cd $rootdir
         }
-        function mvdir() {
-        mv -n `find $1/* -maxdepth 0 -type d` ./
-        rm -rf $1
-        }
+        
         (
         git_clone https://github.com/sirpdboy/luci-app-lucky oplucky && mv -f oplucky/*/ ./ && rm -rf oplucky
         git_clone https://github.com/sirpdboy/luci-app-ddns-go ddns-go && mvdir ddns-go
